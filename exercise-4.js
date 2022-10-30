@@ -1,5 +1,12 @@
-function nicknameMap(person) {
-  return `<${person.name}>-<${person.age}>` ;
+
+function nicknameMap(persons) {
+  const array = [];
+  for (let person of persons) {
+    let object = {};
+    object = `<${person.name}>-<${person.age}>`;
+    array.push(object);
+  } 
+  return array;
 }
 
 const persons = [
@@ -15,8 +22,6 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-const nicknames = persons.map(nicknameMap);
+const nicknames = nicknameMap(persons);
 console.log(persons);
 console.log(nicknames);
-
-//Ho sperimentato vari metodi ma come risultato avevo sempre undefined. 
